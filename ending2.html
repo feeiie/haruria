@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+      <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&family=M+PLUS+Rounded+1c&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+  <title>ending2 Our future</title>
+  <style>
+
+    * {
+  font-family: 'Zen Maru Gothic', 'M PLUS Rounded 1c', sans-serif;
+  font-weight: bold;
+}
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #fff0f4, #ffeaea);
+      font-family: "Zen Maru Gothic", "Georgia", serif;
+      overflow: hidden;
+    }
+
+    .game-clear-message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      color: #e73c7e;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(255, 150, 170, 0.3);
+      z-index: 1000;
+      opacity: 0;
+      animation: fadeInOut 6s ease-in-out forwards;
+    }
+
+    .scroll-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      animation: scrollUp 120s linear forwards;
+    }
+
+    .ending-letter {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(255, 150, 170, 0.3);
+      text-align: left;
+      line-height: 1.9;
+      font-size: 17px;
+      color: #5b3a42;
+    }
+
+    .ending-letter::before {
+      content: "🏠";
+      font-size: 2.5rem;
+      display: block;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .ending-letter p:last-child {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #e73c7e;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-top: 50px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+      animation-delay: 62s;
+    }
+
+    .button-group button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffd5e5;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .button-group button:hover {
+      background-color: #ffb6d0;
+    }
+
+    @keyframes scrollUp {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-200%);
+  }
+}
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0; }
+      10%, 90% { opacity: 1; }
+    }
+    .important {
+  font-weight: bold;
+  color: #e91e63;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.gallery-thumb {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+  </style>
+</head>
+<body>
+    <audio id="bgm" src="休日のアクアリウム.mp3" autoplay loop preload="auto"></audio>
+<audio id="clickSound" src="パッ.mp3" preload="auto"></audio>
+  <div class="scroll-container">
+  <div class="ending-letter">
+
+  <p>Finally you complated this website and you remeber many memoety between us.  
+    <span class="important">All memoery is important for me</span> and even the memoery didnt contatin this web i remeber many.  
+    We talked everyday and do go live and make us happy.  
+    But for now is need take more time future than past.  
+    After guraduation, we wil meet again and have enjoy time.</p>
+
+  <p>I dont know if our future will go well because of language and place where we live.  
+    <span class="important">You dont need to be sorry by im will be alone.</span>  
+    I finnaly found a people who i can trsut and stay with comftable.</p>
+
+  <p>Staying with is sometimes hard in term of speaking but  
+    <span class="important">i really want to stay with you until we die same time.</span></p>
+
+  <p>I lost my friend when i get highschool and i have started talk with imokenpi.  
+    I have talkeed in jr highschool but we dont have a good realtionship becuase i had a otehr friend who i lost alr.  
+    Staying with imokenpi is good but we are just friend for killing a time and no that deep relationship.</p>
+
+  <p>When i meet you and i didnt expect that we can go deeply.  
+    <span class="important">So now is a only you i can trsut and i can say true firend</span>  
+    (Ofc you are my best girl firned i have ever have, and until i dei).</p>
+
+  <p><span class="important">I really apprice you and love you.</span>  
+    Nerver thought i dont like you or mad to you.  
+    <span class="important">You really think about me and take care of me</span>  
+    this is somehting that i really love and big reason that i love you.</p>
+
+  <p>I konw you have many reasons that you like me. this is same thing as me.  
+    Anyway, <span class="important">happy birthday rhian</span>  
+    you are getting old and not fit school unfiorm is sad  
+    but <span class="important">you are too cute to fit any clothe.</span></p>
+
+  <p><span class="important">Im sooo excited to stay with you in the future.</span>  
+    <span class="important">I Love You soo much.</span></p>
+
+
+
+    <h2 style="text-align: center; margin-top: 60px;">📸 Collected Memories</h2>
+<div id="galleryDisplay" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 0 20px;"></div>
+
+</div>
+
+</div>
+
+
+  <div class="button-group">
+    <button onclick="location.href='index2.html'">🏠 メニューに戻る</button>
+    <button onclick="location.reload()">🔁 もう一回読む</button>
+  </div>
+
+
+</body>
+
+
+<script>
+  const galleryImages = {
+    gallery1: "discordpic.jpg",
+    gallery2: "ogserver.jpg",
+    gallery3: "firstjapan.jpg",
+    gallery4: "wentpalces.jpg",
+    gallery5: "finalline.png",
+    gallery6: "wait1year.png",
+    gallery7: "nerveswhenyousendme.jpg",
+    gallery8: "watchmovie.jpg",
+    gallery9: "unipic.jpg",
+    gallery10: "livewith.jpg"
+  };
+
+  const display = document.getElementById("galleryDisplay");
+
+  Object.values(galleryImages).forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.className = "gallery-thumb";
+    img.alt = src;
+    display.appendChild(img);
+  });
+</script>
+
+
+</html>
