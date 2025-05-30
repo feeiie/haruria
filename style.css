@@ -565,3 +565,25 @@ button {
     transform: scale(1.05);
   }
   
+  .cute-btn {
+  background: linear-gradient(145deg, #ffb3c6, #ffe3f3);
+  color: #00bfff;
+  font-size: 20px;
+  font-weight: 900;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  text-shadow: 1px 1px 2px rgba(173, 216, 230, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Kosugi Maru', sans-serif;
+  display: inline-block;
+  margin: 10px;
+}
+
+.cute-btn:hover {
+  background: linear-gradient(145deg, #ff99bb, #ffddee);
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
