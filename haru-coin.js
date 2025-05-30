@@ -30,11 +30,11 @@ const buyStage2Btn = document.getElementById("buyStage2Btn");
 
 // 購入済みチェック
 if (localStorage.getItem("specialStage1Purchased") === "true") {
-  buyStage1Btn.textContent = "購入済み";
+  buyStage1Btn.textContent = "already bought it";
   buyStage1Btn.disabled = true;
 }
 if (localStorage.getItem("specialStage2Purchased") === "true") {
-  buyStage2Btn.textContent = "購入済み";
+  buyStage2Btn.textContent = "already bought it";
   buyStage2Btn.disabled = true;
 }
 
@@ -47,9 +47,9 @@ buyStage1Btn.addEventListener("click", () => {
     total.textContent = haruCount;
     buyStage1Btn.textContent = "購入済み";
     buyStage1Btn.disabled = true;
-    alert("Special Stage1 を購入しました！");
+    alert("You bought Special Stage1");
   } else {
-    alert("コインが足りません！（20必要）");
+    alert("You dont have enough coins");
   }
 });
 
@@ -62,9 +62,9 @@ buyStage2Btn.addEventListener("click", () => {
     total.textContent = haruCount;
     buyStage2Btn.textContent = "購入済み";
     buyStage2Btn.disabled = true;
-    alert("Special Stage2 を購入しました！");
+    alert("You bought Special Stage2");
   } else {
-    alert("コインが足りません！（20必要）");
+    alert("You dont have enough coins");
   }
 });
 
@@ -72,7 +72,7 @@ buyStage2Btn.addEventListener("click", () => {
 const resetBtn = document.getElementById("resetShopBtn");
 if (resetBtn) {
   resetBtn.addEventListener("click", () => {
-    if (confirm("ショップの状態をリセットしますか？")) {
+    if (confirm("Do you want to reset this shop?")) {
       localStorage.removeItem(haruKey);
       localStorage.removeItem("specialStage1Purchased");
       localStorage.removeItem("specialStage2Purchased");
