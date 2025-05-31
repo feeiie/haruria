@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  src: url('fonts/MPLUSRounded1c-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   margin: 0;
-  font-family: 'Zen Maru Gothic', sans-serif;
+font-family: 'M PLUS Rounded 1c', sans-serif;
   background: linear-gradient(to bottom right, #fff0f5, #e0ffff);
   color: #444;
 }
@@ -181,6 +186,9 @@ th {
 }
 
 body, h1, h2, h3, h4, h5, h6, th, td, button, .coin-counter {
-  font-family: 'Zen Maru Gothic', 'M PLUS Rounded 1c', sans-serif;
+font-family: 'M PLUS Rounded 1c', sans-serif;
   font-weight: bold;
+}
+* {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
