@@ -6,13 +6,15 @@ body {
     position: relative;
   }
   
+
   #gameArea {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
   #player {
     position: absolute;
     width: 60px;
@@ -427,4 +429,9 @@ font-family: 'M PLUS Rounded 1c', sans-serif !important;
   background: linear-gradient(145deg, #ff99bb, #ffddee);
   transform: scale(1.07);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+#navButtons button {
+  font-size: 1.1rem;
+  min-width: 100px;
+  white-space: nowrap;
 }

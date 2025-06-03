@@ -5,7 +5,7 @@
   <title>📸 Gallery</title>
   <style>
     body {
-font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
       text-align: center;
       background-color: #fffafc;
     }
@@ -31,96 +31,104 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
       border-radius: 8px;
     }
     .card p {
-  margin: 5px 0 0;
-  font-weight: bold;
-  color: #03a9f4;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-
-}
+      margin: 5px 0 0;
+      font-weight: bold;
+      color: #03a9f4;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
 
     .back-button {
-  margin-top: 30px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #aee1f9;
-  border: none;
-  border-radius: 10px;
-  color: #003d66;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-}
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #aee1f9;
+      border: none;
+      border-radius: 10px;
+      color: #003d66;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
 
-.back-button:hover {
-  background-color: #90caf9;
-  transform: scale(1.05);
-}
-
+    .back-button:hover {
+      background-color: #90caf9;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
   <audio id="clickSound" src="パッ.mp3" preload="auto"></audio>
+  <audio id="bgm" src="淡い祈り.mp3" loop preload="auto"></audio>
 
-  <h1>📸 Gallery</h1>
+  <h1>📸 Gallery (Click somewhere)</h1>
   <div id="galleryGrid"></div>
-<button class="back-button" onclick="history.back()">back</button>
+  <button class="back-button" onclick="history.back()">back</button>
+
   <script>
-
     document.addEventListener("DOMContentLoaded", () => {
-    const clickSound = document.getElementById("clickSound");
+      const clickSound = document.getElementById("clickSound");
+      const bgm = document.getElementById("bgm");
 
-    document.querySelectorAll("button").forEach(btn => {
-      btn.addEventListener("click", () => {
-        if (clickSound) {
-          clickSound.currentTime = 0;
-          clickSound.play().catch(() => {});
+      // 🎵 Safari対応：初回クリックでBGM開始
+      document.addEventListener("click", () => {
+        if (bgm && bgm.paused) {
+          bgm.volume = 0.3;
+          bgm.play().catch(() => {});
         }
+      }, { once: true });
+
+      document.querySelectorAll("button").forEach(btn => {
+        btn.addEventListener("click", () => {
+          if (clickSound) {
+            clickSound.currentTime = 0;
+            clickSound.play().catch(() => {});
+          }
+        });
       });
-    });
-  });
-    const totalCards = 10;
 
-    // ギャラリー画像のデータ設定（全10枚）
-    const images = {
-      gallery1: { src: "discordpic.jpg", title: "Our first airbnb" },
-      gallery2: { src: "ogserver.jpg", title: "we talked everyday" },
-      gallery3: { src: "firstjapan.jpg", title: "most happy day our life" },
-      gallery4: { src: "wentpalces.jpg", title: "unforgetable memories" },
-      gallery5: { src: "finalline.png", title: "i cried after you left" },
-      gallery6: { src: "wait1year.png", title: "I know you like this" },
-      gallery7: { src: "nerveswhenyousendme.jpg", title: "I AM WAITING" },
-      gallery8: { src: "watchmovie.jpg", title: "Next time watch all" },
-      gallery9: { src: "unipic.jpg", title: "begin and end with me" },
-      gallery10: { src: "livewith.jpg", title: "bite me everyday!" }
-    };
+      const totalCards = 10;
 
-    // ローカルストレージから獲得状況を取得
-    const unlocked = JSON.parse(localStorage.getItem("galleryUnlocks") || "[]");
-    const galleryDiv = document.getElementById("galleryGrid");
+      // ギャラリー画像のデータ設定（全10枚）
+      const images = {
+        gallery1: { src: "discordpic.jpg", title: "Our first airbnb" },
+        gallery2: { src: "ogserver.jpg", title: "we talked everyday" },
+        gallery3: { src: "firstjapan.jpg", title: "most happy day our life" },
+        gallery4: { src: "wentpalces.jpg", title: "unforgetable memories" },
+        gallery5: { src: "finalline.png", title: "i cried after you left" },
+        gallery6: { src: "wait1year.png", title: "I know you like this" },
+        gallery7: { src: "nerveswhenyousendme.jpg", title: "I AM WAITING" },
+        gallery8: { src: "watchmovie.jpg", title: "Next time watch all" },
+        gallery9: { src: "unipic.jpg", title: "begin and end with me" },
+        gallery10: { src: "livewith.jpg", title: "bite me everyday!" }
+      };
 
-    for (let i = 1; i <= totalCards; i++) {
-      const itemId = `gallery${i}`;
-      const card = document.createElement("div");
-      card.className = "card";
+      // ローカルストレージから獲得状況を取得
+      const unlocked = JSON.parse(localStorage.getItem("galleryUnlocks") || "[]");
+      const galleryDiv = document.getElementById("galleryGrid");
 
-      const img = document.createElement("img");
-      const title = document.createElement("p");
+      for (let i = 1; i <= totalCards; i++) {
+        const itemId = `gallery${i}`;
+        const card = document.createElement("div");
+        card.className = "card";
 
-      if (unlocked.includes(itemId)) {
-        // 獲得済みなら画像とタイトルを表示
-        img.src = images[itemId].src;
-        title.textContent = images[itemId].title;
-      } else {
-        // 未獲得なら「？」表示
-        img.src = "img/question.png"; // 「？」の画像を準備して img フォルダへ
-        title.textContent = "？？？";
+        const img = document.createElement("img");
+        const title = document.createElement("p");
+
+        if (unlocked.includes(itemId)) {
+          // 獲得済みなら画像とタイトルを表示
+          img.src = images[itemId].src;
+          title.textContent = images[itemId].title;
+        } else {
+          // 未獲得なら「？」表示
+          img.src = "img/question.png"; // 「？」の画像を準備して img フォルダへ
+          title.textContent = "？？？";
+        }
+
+        card.appendChild(img);
+        card.appendChild(title);
+        galleryDiv.appendChild(card);
       }
-
-      card.appendChild(img);
-      card.appendChild(title);
-      galleryDiv.appendChild(card);
-    }
+    });
   </script>
-
 </body>
 </html>
